@@ -3,4 +3,4 @@ pluginManagement {
 		gradlePluginPortal()
 	}
 }
-rootProject.name = "WebCrawler"
+rootProject.name = "web-crawler"

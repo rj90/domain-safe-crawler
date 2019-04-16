@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/search")
 public class WebCrawlerController {
 
-    private WebCrawlerService webCrawlerService;
+    private final WebCrawlerService webCrawlerService;
 
     @Autowired
     public WebCrawlerController(WebCrawlerService webCrawlerService) {

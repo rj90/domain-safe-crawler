@@ -1,1 +1,2 @@
-
+web-crawler:
+  timeout: 10000

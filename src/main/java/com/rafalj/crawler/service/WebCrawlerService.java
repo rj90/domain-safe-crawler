@@ -1,6 +1,8 @@
 package com.rafalj.crawler.service;
 
+import com.rafalj.crawler.model.PageInfo;
+
 public interface WebCrawlerService {
 
-    void crawl(String url);
+  PageInfo crawl(final String url);
 }

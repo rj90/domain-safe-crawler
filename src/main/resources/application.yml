@@ -1,2 +1,5 @@
+spring:
+  jackson:
+    default-property-inclusion: non_empty
 web-crawler:
   timeout: 10000

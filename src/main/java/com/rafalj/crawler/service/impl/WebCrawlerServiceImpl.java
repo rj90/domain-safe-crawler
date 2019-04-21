@@ -6,6 +6,8 @@ import com.rafalj.crawler.service.WebCrawlerService;
 
 import java.io.IOException;
 import java.net.URI;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Map;
@@ -46,7 +48,12 @@ public class WebCrawlerServiceImpl implements WebCrawlerService {
 
   @Override
   public PageInfo crawl(final String url) {
-    return crawlUrl(url, null);
+    log.info("Starting crawler");
+    Instant start = Instant.now();
+    PageInfo pageInfo = crawlUrl(url, null);
+    Instant end = Instant.now();
+    log.info("Site crawled in {} seconds", Duration.between(start, end));
+    return pageInfo;
   }
 
   private PageInfo crawlUrl(final String url, final Map<String, PageInfo> visitedDocuments) {

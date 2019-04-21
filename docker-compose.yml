@@ -1,6 +1,6 @@
 version: '3.7'
 services:
   web-crawler:
-    image: web-crawler:0.0.1
+    image: com.rafalj.crawler/web-crawler:0.0.1
     ports:
       - 8080:8080

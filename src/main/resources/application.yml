@@ -1,5 +1,8 @@
 spring:
+  cache:
+    type: SIMPLE
   jackson:
     default-property-inclusion: non_empty
 web-crawler:
+  follow-redirects: true
   timeout: 10000

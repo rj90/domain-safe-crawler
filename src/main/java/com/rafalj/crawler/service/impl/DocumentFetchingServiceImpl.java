@@ -23,11 +23,11 @@ public class DocumentFetchingServiceImpl implements DocumentFetchingService {
   }
 
   @Override
-  @Cacheable
+  @Cacheable(key = "#url")
   public Document fetchDocument(@NotNull String url) throws IOException {
     return Jsoup.connect(url)
         .timeout(crawlerProperties.getTimeout())
-        .followRedirects(false)
+        .followRedirects(crawlerProperties.isFollowRedirects())
         .get();
   }
 }

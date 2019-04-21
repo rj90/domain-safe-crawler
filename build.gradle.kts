@@ -6,9 +6,10 @@ plugins {
   id("io.freefair.lombok") version "3.2.0"
   id("com.github.kt3k.coveralls") version "2.8.2"
   checkstyle
-  java
-  jacoco
   groovy
+  idea
+  jacoco
+  java
 }
 
 apply {
@@ -17,7 +18,7 @@ apply {
 }
 
 group = "com.rafalj.crawler"
-version = "0.0.1-SNAPSHOT"
+version = "0.0.1"
 
 java {
   sourceCompatibility = JavaVersion.VERSION_1_8
@@ -42,12 +43,6 @@ dependencies {
 buildScan {
   termsOfServiceUrl = "https://gradle.com/terms-of-service"
   termsOfServiceAgree = "yes"
-}
-
-docker {
-  springBootApplication {
-    tag.set("web-crawler:0.0.1")
-  }
 }
 
 tasks.withType<JacocoReport>().configureEach {
